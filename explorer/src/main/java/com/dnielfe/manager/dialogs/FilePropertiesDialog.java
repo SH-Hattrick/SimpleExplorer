@@ -245,7 +245,23 @@ public final class FilePropertiesDialog extends DialogFragment {
 
             @Override
             protected void onPostExecute(final String[] result) {
-                
+                if (result != null) {
+                    mSizeLabel.setText(result[0]);
+                    mTimeLabel.setText(result[1]);
+                    mMD5Label.setText(result[2]);
+                    mSHA1Label.setText(result[3]);
+                    filecountlabel.setText(result[4]);
+                    dircountlabel.setText(result[5]);
+                    writeable.setText(result[6]);
+                } else {
+                    mSizeLabel.setText("-");
+                    mTimeLabel.setText("-");
+                    mMD5Label.setText("-");
+                    mSHA1Label.setText("-");
+                    filecountlabel.setText("-");
+                    dircountlabel.setText("-");
+                    writeable.setText("-");
+                }
             }
         }
     }
