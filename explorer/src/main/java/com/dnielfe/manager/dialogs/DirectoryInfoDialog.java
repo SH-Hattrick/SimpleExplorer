@@ -108,42 +108,7 @@ public final class DirectoryInfoDialog extends DialogFragment {
 
         @Override
         protected void onPostExecute(final PartitionInfo partitionInfo) {
-            final View view = mViewRef.get();
-            if (view != null) {
-                final TextView title = (TextView) view
-                        .findViewById(R.id.location);
-                title.setText(partitionInfo.mPath);
-
-                if (partitionInfo.mPermissionText.length() != 0L) {
-                    final TextView perm = (TextView) view
-                            .findViewById(R.id.dir_permission);
-                    perm.setText(partitionInfo.mPermissionText);
-                }
-
-                if (partitionInfo.mTotalBytes != 0L) {
-                    final TextView total = (TextView) view
-                            .findViewById(R.id.total);
-                    total.setText(partitionInfo.mTotalBytesText);
-                }
-
-                if (partitionInfo.mBlockSize != 0L) {
-                    final TextView block = (TextView) view
-                            .findViewById(R.id.block_size);
-                    block.setText(partitionInfo.mBlockSizeText);
-                }
-
-                if (partitionInfo.mFreeBytes != 0L) {
-                    final TextView free = (TextView) view
-                            .findViewById(R.id.free);
-                    free.setText(partitionInfo.mFreeBytesText);
-                }
-
-                if (partitionInfo.mUsedSpace != 0L) {
-                    final TextView used = (TextView) view
-                            .findViewById(R.id.used);
-                    used.setText(partitionInfo.mUsedSpaceText);
-                }
-            }
+            
         }
     }
 }
